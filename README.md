@@ -31,3 +31,20 @@ git clone https://github.com/BeiYazi0/Img_Mix
 【查模板】 +序号
 
 查看指定的mask
+
+【添加模板】 +模板名+图片
+
+添加mask
+
+## 效果
+
+原图
+![image](https://github.com/BeiYazi0/Img_Mix/blob/main/images/example/black1.jpg)
+![image](https://github.com/BeiYazi0/Img_Mix/blob/main/images/example/white1.jpg)
+
+指令
+![image](https://github.com/BeiYazi0/Img_Mix/blob/main/images/example/mask5.jpg)
+![image](https://github.com/BeiYazi0/Img_Mix/blob/main/images/example/mix5.jpg)
+
+效果
+![image](https://github.com/BeiYazi0/Img_Mix/blob/main/images/example/mix5_res.jpg)
