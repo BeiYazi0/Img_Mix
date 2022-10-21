@@ -48,3 +48,7 @@ git clone https://github.com/BeiYazi0/Img_Mix
 
 效果
 ![image](https://github.com/BeiYazi0/Img_Mix/blob/main/images/example/mix5_res.jpg)
+
+## 备注
+
+添加模板可以添加自己的mask，但是mask应当只能是是黑(0,0,0)白(255,255,255)两色。
