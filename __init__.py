@@ -16,6 +16,7 @@ from .img_mix import mix
 sv_help = '''
 [混合] +序号+图片1+图片2
 [查模板] +序号
+[添加模板] +模板名+图片
 '''.strip()
 sv = Service('图片混合',help_=sv_help, bundle='娱乐')
 
