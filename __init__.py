@@ -83,8 +83,9 @@ async def get_img(black_url, white_url, idx, bot, ev: CQEvent):
 async def mix_init(bot, ev: CQEvent): 
     content=ev.message
     idx=content.extract_plain_text()
-    if idx=='':
-        idx=1
+    if idx=='' or len(content) != 3:
+        await bot.send(ev, "参数错误")
+        return
     code1=content[1]["data"]
     code2=content[2]["data"]
     black_url = code1.get("url")
@@ -122,7 +123,7 @@ async def add_mask(bot,ev:CQEvent):
 
     content=ev.message
     name = content.extract_plain_text().strip()
-    if name=='' or len(content) != 2:
+    if name=='' or len(content) != 3:
         await bot.send(ev, "参数错误")
         return
     
