@@ -81,13 +81,9 @@ async def get_img(black_url, white_url, idx, bot, ev: CQEvent):
 @sv.on_prefix('混合')
 async def mix_init(bot, ev: CQEvent): 
     content=ev.message
-    if len(content) != 3:
-        return
     idx=content.extract_plain_text()
     if idx=='':
         idx=1
-    else:
-        idx=int(idx)
     code1=content[1]["data"]
     code2=content[2]["data"]
     black_url = code1.get("url")
