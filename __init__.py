@@ -9,7 +9,7 @@ from os import path
 
 from hoshino.typing import CQEvent
 import hoshino
-from hoshino import Service
+from hoshino import Service, priv
 
 from .img_mix import mix
 
@@ -84,7 +84,7 @@ async def mix_init(bot, ev: CQEvent):
     if len(content) != 3:
         return
     idx=content.extract_plain_text()
-    if idx=='' or not idx.isdigit():
+    if idx=='':
         idx=1
     else:
         idx=int(idx)
@@ -106,7 +106,7 @@ async def mix_init(bot, ev: CQEvent):
 @sv.on_prefix('查模板')
 async def mix_init(bot, ev: CQEvent): 
     idx=ev.message.extract_plain_text()
-    if idx=='' or not idx.isdigit():
+    if idx=='':
         await bot.send(ev, "参数错误")
         return
     mask_file = _dir + MASK_FOLDER+f"{idx}.jpg"
@@ -122,8 +122,19 @@ async def mix_init(bot, ev: CQEvent):
 async def add_mask(bot,ev:CQEvent):
     if not priv.check_priv(ev, priv.SUPERUSER):
         return
+
     content=ev.message
     name = content.extract_plain_text().strip()
+    if name=='':
+        await bot.send(ev, "参数错误")
+        return
+    
+    mask_file = _dir + MASK_FOLDER+f"{name}.jpg"
+
+    if path.exists(mask_file):
+        await bot.send(ev,"已存在该模板")
+        return 
+
     img_url=content[1]["data"].get("url")
     if img_url == None:
         await bot.send(ev,'请附带mask图片~')
