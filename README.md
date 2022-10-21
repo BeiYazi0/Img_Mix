@@ -39,12 +39,12 @@ git clone https://github.com/BeiYazi0/Img_Mix
 ## 效果
 
 原图
-![image](main/images/example/black1.jpg)
-![image](main/images/example/white1.jpg)
+![image](https://github.com/BeiYazi0/Img_Mix/blob/main/images/example/black1.jpg)
+![image](https://github.com/BeiYazi0/Img_Mix/blob/main/images/example/white1.jpg)
 
 指令
-![image](main/images/example/mask5.jpg)
-![image](main/images/example/mix5.jpg)
+![image](https://github.com/BeiYazi0/Img_Mix/blob/main/images/example/mask5.jpg)
+![image](https://github.com/BeiYazi0/Img_Mix/blob/main/images/example/mix5.jpg)
 
 效果
-![image](main/images/example/mix5_res.jpg)
+![image](https://github.com/BeiYazi0/Img_Mix/blob/main/images/example/mix5_res.jpg)
