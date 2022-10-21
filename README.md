@@ -43,8 +43,8 @@ git clone https://github.com/BeiYazi0/Img_Mix
 ![image](https://github.com/BeiYazi0/Img_Mix/blob/main/images/example/white1.jpg)
 
 指令
-![image](https://github.com/BeiYazi0/Img_Mix/blob/main/images/example/mask5.jpg)
-![image](https://github.com/BeiYazi0/Img_Mix/blob/main/images/example/mix5.jpg)
+![image](https://github.com/BeiYazi0/Img_Mix/blob/main/images/example/mask5.png)
+![image](https://github.com/BeiYazi0/Img_Mix/blob/main/images/example/mix5.png)
 
 效果
 ![image](https://github.com/BeiYazi0/Img_Mix/blob/main/images/example/mix5_res.jpg)
