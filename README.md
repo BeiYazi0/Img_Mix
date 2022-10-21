@@ -16,7 +16,11 @@ https://github.com/BeiYazi0/Img_Mix
 
 git clone https://github.com/BeiYazi0/Img_Mix
 
-2.启用：
+2.安装依赖:
+
+pip install -r requirements.txt
+
+3.启用：
 
 在 HoshinoBot\hoshino\config\ **bot**.py 文件的 MODULES_ON 加入 'Img_Mix'
 
