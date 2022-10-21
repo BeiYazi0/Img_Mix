@@ -116,3 +116,22 @@ async def mix_init(bot, ev: CQEvent):
         await bot.send(ev,mycontent)
     else:
         await bot.send(ev,"不存在该模板")
+        
+
+@sv.on_prefix('添加模板')
+async def add_mask(bot,ev:CQEvent):
+    if not priv.check_priv(ev, priv.SUPERUSER):
+        return
+    content=ev.message
+    name = content.extract_plain_text().strip()
+    img_url=content[1]["data"].get("url")
+    if img_url == None:
+        await bot.send(ev,'请附带mask图片~')
+        return
+
+    p = await download(img_url)
+    img = cv2.imdecode(np.frombuffer(p, np.uint8), cv2.IMREAD_COLOR)
+    mask_file = _dir + MASK_FOLDER+f"{name}.jpg"
+    cv2.imwrite(mask_file, img)
+    await bot.send(ev,'模板已添加~')
+
