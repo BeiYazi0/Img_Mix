@@ -123,7 +123,7 @@ async def add_mask(bot,ev:CQEvent):
 
     content=ev.message
     name = content.extract_plain_text().strip()
-    if name=='' or len(content) != 3:
+    if name=='' or len(content) != 2:
         await bot.send(ev, "参数错误")
         return
     
