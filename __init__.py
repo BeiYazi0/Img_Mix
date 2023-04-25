@@ -20,9 +20,9 @@ sv_help = '''
 '''.strip()
 sv = Service('图片混合',help_=sv_help, bundle='娱乐')
 
-MASK_FOLDER = "images\\mask\\"
-OUT_FOLDER = "images\\ouput"
-_dir = path.dirname(__file__)+"\\"
+MASK_FOLDER = path.join("images", "mask")
+OUT_FOLDER = path.join("images", "ouput")
+_dir = path.dirname(__file__)
 
 
 def start_loop(loop):
@@ -49,8 +49,8 @@ def cv2_to_base64(img):
 
 
 async def get_img(black_url, white_url, idx, bot, ev: CQEvent):   
-    mask_file = _dir + MASK_FOLDER+f"{idx}.jpg"
-    output_dir = _dir + OUT_FOLDER
+    mask_file = path.join(_dir, MASK_FOLDER, f"{idx}.jpg")
+    output_dir = path.join(_dir, OUT_FOLDER)
 
     if not path.exists(mask_file):
         await bot.send(ev,"不存在该模板")
@@ -107,7 +107,7 @@ async def mix_init(bot, ev: CQEvent):
     if idx=='':
         await bot.send(ev, "参数错误")
         return
-    mask_file = _dir + MASK_FOLDER+f"{idx}.jpg"
+    mask_file = path.join(_dir, MASK_FOLDER, f"{idx}.jpg")
     if path.exists(mask_file):
         mycontent = f'''模板{idx}
 [CQ:image,file=file:///{mask_file}]'''
@@ -127,7 +127,7 @@ async def add_mask(bot,ev:CQEvent):
         await bot.send(ev, "参数错误")
         return
     
-    mask_file = _dir + MASK_FOLDER+f"{name}.jpg"
+    mask_file = path.join(_dir, MASK_FOLDER, f"{name}.jpg")
 
     if path.exists(mask_file):
         await bot.send(ev,"已存在该模板")
@@ -140,7 +140,6 @@ async def add_mask(bot,ev:CQEvent):
 
     p = await download(img_url)
     img = cv2.imdecode(np.frombuffer(p, np.uint8), cv2.IMREAD_COLOR)
-    mask_file = _dir + MASK_FOLDER+f"{name}.jpg"
     cv2.imwrite(mask_file, img)
     await bot.send(ev,'模板已添加~')
 
